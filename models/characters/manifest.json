@@ -1,0 +1,1899 @@
+{
+  "version": 1,
+  "style": "A: low-poly, flat-shaded (vertex colours, no textures)",
+  "generator": "majorca/art/a-lowpoly/scripts/build_game_characters.py (Blender 5.2.2 LTS)",
+  "units": "meters",
+  "up": "+Y",
+  "forward": "+Z",
+  "left": "+X",
+  "origin": "floor, between the feet",
+  "fps": 30,
+  "material": "one material 'lowpoly' per file, baseColor from COLOR_0 vertex colours, no normals exported (GLTFLoader turns on flatShading), backface culling on",
+  "meshes": {
+    "body": "skinned body",
+    "head": "skinned head with morph targets"
+  },
+  "bones": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "shoulder_L",
+    "upperarm_L",
+    "forearm_L",
+    "hand_L",
+    "fingers_L",
+    "thumb_L",
+    "shoulder_R",
+    "upperarm_R",
+    "forearm_R",
+    "hand_R",
+    "fingers_R",
+    "thumb_R",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "clips_note": "all clips are in place (no root motion) and loop; move the root at speeds.walk / speeds.run m/s to avoid foot sliding. sit/drive_sit lower the hips: place the model so its 'hip' point (glTF coords, model space) lands on the seat / car seatHip.",
+  "morphs_note": "smile, deadpan, what (open-mouth 'WHAT?!'), blink, talk (mouth half open) on mesh 'head'",
+  "sockets_note": "socket_hand_R is oriented so an upright prop (+Y up) stands upright in the drink clip's hold pose; socket_hand_L is axis-aligned at rest; socket_head sits at the crown.",
+  "characters": [
+    {
+      "id": "paul",
+      "name": "Paul Alexander",
+      "role": "hero",
+      "file": "paul.glb",
+      "height": 1.845,
+      "tris": 4606,
+      "bytes": 508308,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.05,
+        "run": 3.62
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5065,
+          -0.4084
+        ],
+        "seatHeight": 0.405
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.3523,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.6223,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "wine_girl",
+      "name": "The Wine Wanderer",
+      "role": "wine festival: pours for Paul Alexander",
+      "file": "wine_girl.glb",
+      "height": 1.721,
+      "tris": 5642,
+      "bytes": 511752,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.98,
+        "run": 3.36
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4706,
+          -0.3794
+        ],
+        "seatHeight": 0.376
+      }
+    },
+    {
+      "id": "angel_guy",
+      "name": "The Angel-Tattoo Guy",
+      "role": "club: the 'three kilos' guy",
+      "file": "angel_guy.glb",
+      "height": 1.762,
+      "tris": 5166,
+      "bytes": 500996,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.0,
+        "run": 3.44
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "seatHeight": 0.385
+      }
+    },
+    {
+      "id": "club_kid_1",
+      "name": "Club Kid (Dani)",
+      "role": "club kid",
+      "file": "club_kid_1.glb",
+      "height": 1.791,
+      "tris": 3678,
+      "bytes": 430284,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.01,
+        "run": 3.48
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4871,
+          -0.3927
+        ],
+        "seatHeight": 0.389
+      }
+    },
+    {
+      "id": "club_kid_2",
+      "name": "Club Kid (Iker)",
+      "role": "club kid",
+      "file": "club_kid_2.glb",
+      "height": 1.783,
+      "tris": 2890,
+      "bytes": 384084,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.03,
+        "run": 3.54
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4954,
+          -0.3994
+        ],
+        "seatHeight": 0.396
+      }
+    },
+    {
+      "id": "club_kid_3",
+      "name": "Club Kid (Nerea)",
+      "role": "club kid",
+      "file": "club_kid_3.glb",
+      "height": 1.696,
+      "tris": 4218,
+      "bytes": 446360,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.96,
+        "run": 3.32
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.465,
+          -0.3749
+        ],
+        "seatHeight": 0.372
+      }
+    },
+    {
+      "id": "receptionist",
+      "name": "Reception",
+      "role": "club: takes the cash and the passport",
+      "file": "receptionist.glb",
+      "height": 1.735,
+      "tris": 5074,
+      "bytes": 514680,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.98,
+        "run": 3.36
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4706,
+          -0.3794
+        ],
+        "seatHeight": 0.376
+      }
+    },
+    {
+      "id": "cop_lead",
+      "name": "Agente Ferrer",
+      "role": "checkpoint: lead officer",
+      "file": "cop_lead.glb",
+      "height": 1.837,
+      "tris": 3232,
+      "bytes": 425252,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.06,
+        "run": 3.64
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5093,
+          -0.4106
+        ],
+        "seatHeight": 0.407
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.3528,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.6228,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "cop_partner",
+      "name": "Agente Vidal",
+      "role": "checkpoint: partner",
+      "file": "cop_partner.glb",
+      "height": 1.729,
+      "tris": 4224,
+      "bytes": 476172,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.99,
+        "run": 3.4
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4761,
+          -0.3838
+        ],
+        "seatHeight": 0.381
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.3474,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.6174,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "cop_radio",
+      "name": "Agente Soler",
+      "role": "checkpoint: on the radio",
+      "file": "cop_radio.glb",
+      "height": 1.799,
+      "tris": 3232,
+      "bytes": 430532,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.03,
+        "run": 3.56
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4982,
+          -0.4017
+        ],
+        "seatHeight": 0.398
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.351,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.621,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "cop_wave",
+      "name": "Agente Navarro",
+      "role": "checkpoint: waves traffic",
+      "file": "cop_wave.glb",
+      "height": 1.78,
+      "tris": 3972,
+      "bytes": 461320,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.02,
+        "run": 3.5
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4899,
+          -0.395
+        ],
+        "seatHeight": 0.392
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.3497,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.6197,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "abuela",
+      "name": "Abuela",
+      "role": "checkpoint: drives past",
+      "file": "abuela.glb",
+      "height": 1.609,
+      "tris": 4206,
+      "bytes": 440988,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.92,
+        "run": 3.16
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4429,
+          -0.3571
+        ],
+        "seatHeight": 0.354
+      }
+    },
+    {
+      "id": "jail_guard",
+      "name": "Guard",
+      "role": "jail: guard",
+      "file": "jail_guard.glb",
+      "height": 1.817,
+      "tris": 3136,
+      "bytes": 394352,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.04,
+        "run": 3.6
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5038,
+          -0.4061
+        ],
+        "seatHeight": 0.403
+      }
+    },
+    {
+      "id": "inmate_mime",
+      "name": "Marcel (the mime)",
+      "role": "jail: inmate",
+      "file": "inmate_mime.glb",
+      "height": 1.764,
+      "tris": 3354,
+      "bytes": 410956,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.0,
+        "run": 3.46
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4844,
+          -0.3905
+        ],
+        "seatHeight": 0.387
+      }
+    },
+    {
+      "id": "inmate_tourist",
+      "name": "Gordon (also a tourist)",
+      "role": "jail: inmate",
+      "file": "inmate_tourist.glb",
+      "height": 1.831,
+      "tris": 3338,
+      "bytes": 406020,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.05,
+        "run": 3.62
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5065,
+          -0.4084
+        ],
+        "seatHeight": 0.405
+      }
+    },
+    {
+      "id": "admirer_1",
+      "name": "Festival woman (Luc\u00eda)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_1.glb",
+      "height": 1.747,
+      "tris": 5582,
+      "bytes": 533912,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.98,
+        "run": 3.38
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4733,
+          -0.3816
+        ],
+        "seatHeight": 0.378
+      }
+    },
+    {
+      "id": "admirer_2",
+      "name": "Festival woman (Freya)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_2.glb",
+      "height": 1.74,
+      "tris": 3818,
+      "bytes": 428608,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.99,
+        "run": 3.42
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4789,
+          -0.3861
+        ],
+        "seatHeight": 0.383
+      }
+    },
+    {
+      "id": "admirer_3",
+      "name": "Festival woman (Carmen)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_3.glb",
+      "height": 1.676,
+      "tris": 4762,
+      "bytes": 461768,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.95,
+        "run": 3.28
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4595,
+          -0.3704
+        ],
+        "seatHeight": 0.367
+      }
+    },
+    {
+      "id": "admirer_4",
+      "name": "Festival woman (Giulia)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_4.glb",
+      "height": 1.711,
+      "tris": 5594,
+      "bytes": 509424,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.97,
+        "run": 3.34
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4678,
+          -0.3771
+        ],
+        "seatHeight": 0.374
+      }
+    },
+    {
+      "id": "admirer_5",
+      "name": "Festival woman (Mei)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_5.glb",
+      "height": 1.659,
+      "tris": 4142,
+      "bytes": 436244,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.95,
+        "run": 3.26
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4567,
+          -0.3682
+        ],
+        "seatHeight": 0.365
+      }
+    },
+    {
+      "id": "admirer_6",
+      "name": "Festival woman (Amara)",
+      "role": "wine festival: approaches Paul Alexander",
+      "file": "admirer_6.glb",
+      "height": 1.772,
+      "tris": 5594,
+      "bytes": 506068,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.0,
+        "run": 3.46
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4844,
+          -0.3905
+        ],
+        "seatHeight": 0.387
+      }
+    },
+    {
+      "id": "festival_goer_m1",
+      "name": "Festival-goer (Pau)",
+      "role": "crowd",
+      "file": "festival_goer_m1.glb",
+      "height": 1.821,
+      "tris": 3258,
+      "bytes": 400708,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.04,
+        "run": 3.6
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5038,
+          -0.4061
+        ],
+        "seatHeight": 0.403
+      }
+    },
+    {
+      "id": "festival_goer_m2",
+      "name": "Festival-goer (Jordi)",
+      "role": "crowd",
+      "file": "festival_goer_m2.glb",
+      "height": 1.799,
+      "tris": 3642,
+      "bytes": 425596,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.02,
+        "run": 3.5
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4899,
+          -0.395
+        ],
+        "seatHeight": 0.392
+      }
+    },
+    {
+      "id": "festival_goer_m3",
+      "name": "Festival-goer (Marc)",
+      "role": "crowd",
+      "file": "festival_goer_m3.glb",
+      "height": 1.871,
+      "tris": 4498,
+      "bytes": 463596,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.07,
+        "run": 3.68
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.5148,
+          -0.4151
+        ],
+        "seatHeight": 0.411
+      }
+    },
+    {
+      "id": "festival_goer_f1",
+      "name": "Festival-goer (Sof\u00eda)",
+      "role": "crowd",
+      "file": "festival_goer_f1.glb",
+      "height": 1.691,
+      "tris": 5594,
+      "bytes": 512200,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.96,
+        "run": 3.3
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4622,
+          -0.3727
+        ],
+        "seatHeight": 0.369
+      }
+    },
+    {
+      "id": "fps_rival",
+      "name": "Shooter rival",
+      "role": "club shooter mini-game bot",
+      "file": "fps_rival.glb",
+      "height": 1.773,
+      "tris": 2878,
+      "bytes": 381076,
+      "clips": {
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.02,
+        "run": 3.52
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4927,
+          -0.3972
+        ],
+        "seatHeight": 0.394
+      }
+    }
+  ]
+}
