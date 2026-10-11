@@ -1,4 +1,21 @@
 {
+  "props": {
+    "phone": {
+      "file": "phone.glb",
+      "bytes": 1908,
+      "size": [
+        0.072,
+        0.15,
+        0.009
+      ],
+      "socket": "socket_phone_R",
+      "clips": [
+        "phone_call",
+        "selfie"
+      ],
+      "note": "Attach phone.glb to the character's socket_phone_R node with an identity transform (phone.position.set(0,0,0); phone.quaternion.identity(); socket.add(phone)). The phone's long axis is +Y and its screen faces +Z; in phone_call the screen faces the ear, in selfie it faces the character's face."
+    }
+  },
   "version": 1,
   "style": "A: low-poly, flat-shaded (vertex colours, no textures)",
   "generator": "majorca/art/a-lowpoly/scripts/build_game_characters.py (Blender 5.2.2 LTS)",
@@ -24,12 +41,14 @@
     "forearm_L",
     "hand_L",
     "fingers_L",
+    "index_L",
     "thumb_L",
     "shoulder_R",
     "upperarm_R",
     "forearm_R",
     "hand_R",
     "fingers_R",
+    "index_R",
     "thumb_R",
     "thigh_L",
     "shin_L",
@@ -39,8 +58,9 @@
     "foot_R"
   ],
   "clips_note": "all clips are in place (no root motion) and loop; move the root at speeds.walk / speeds.run m/s to avoid foot sliding. sit/drive_sit lower the hips: place the model so its 'hip' point (glTF coords, model space) lands on the seat / car seatHip.",
-  "morphs_note": "smile, deadpan, what (open-mouth 'WHAT?!'), blink, talk (mouth half open) on mesh 'head'",
-  "sockets_note": "socket_hand_R is oriented so an upright prop (+Y up) stands upright in the drink clip's hold pose; socket_hand_L is axis-aligned at rest; socket_head sits at the crown.",
+  "morphs_note": "smile, deadpan, what (open-mouth 'WHAT?!'), blink, talk (mouth half open), nervous (teeth-clenched grimace, worried brows), smug (one-sided smirk, one brow up) on mesh 'head'",
+  "sockets_note": "socket_hand_R is oriented so an upright prop (+Y up) stands upright in the drink clip's hold pose; socket_phone_R holds props.phone (see props.phone.note); socket_hand_L is axis-aligned at rest; socket_head sits at the crown.",
+  "clip_placement_note": "sit / type_seated / sleep_seated: put the model's 'hip' (glTF, model space) on the seat's hip point. type: stands at a counter of type.counterHeight; type_seated: desk surface at type_seated.deskHeight. drive_sit: 'hip' on the car seatHip; hands on wheelCenter.",
   "characters": [
     {
       "id": "paul",
@@ -49,14 +69,38 @@
       "file": "paul.glb",
       "height": 1.845,
       "tris": 4606,
-      "bytes": 508308,
+      "bytes": 477828,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
           "duration": 3,
           "loop": true
         },
         "drive_sit": {
           "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
           "loop": true
         },
         "hands_up": {
@@ -67,16 +111,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -93,17 +165,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.05,
-        "run": 3.62
+        "run": 3.69
       },
       "sit": {
         "hip": [
@@ -112,6 +187,24 @@
           -0.4084
         ],
         "seatHeight": 0.405
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4965,
+          -0.4384
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5065,
+          -0.4084
+        ],
+        "deskHeight": 0.717
+      },
+      "type": {
+        "counterHeight": 0.994
       },
       "drive_sit": {
         "hip": [
@@ -134,9 +227,33 @@
       "file": "wine_girl.glb",
       "height": 1.721,
       "tris": 5642,
-      "bytes": 511752,
+      "bytes": 481948,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -148,16 +265,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -174,17 +319,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.98,
-        "run": 3.36
+        "run": 3.43
       },
       "sit": {
         "hip": [
@@ -193,6 +341,24 @@
           -0.3794
         ],
         "seatHeight": 0.376
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4606,
+          -0.4094
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4706,
+          -0.3794
+        ],
+        "deskHeight": 0.681
+      },
+      "type": {
+        "counterHeight": 0.92
       }
     },
     {
@@ -202,9 +368,33 @@
       "file": "angel_guy.glb",
       "height": 1.762,
       "tris": 5166,
-      "bytes": 500996,
+      "bytes": 476524,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -216,16 +406,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -242,17 +460,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.0,
-        "run": 3.44
+        "run": 3.51
       },
       "sit": {
         "hip": [
@@ -261,6 +482,24 @@
           -0.3883
         ],
         "seatHeight": 0.385
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4716,
+          -0.4183
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "deskHeight": 0.692
+      },
+      "type": {
+        "counterHeight": 0.943
       }
     },
     {
@@ -270,9 +509,33 @@
       "file": "club_kid_1.glb",
       "height": 1.791,
       "tris": 3678,
-      "bytes": 430284,
+      "bytes": 431844,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -284,16 +547,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -310,17 +601,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.01,
-        "run": 3.48
+        "run": 3.55
       },
       "sit": {
         "hip": [
@@ -329,6 +623,24 @@
           -0.3927
         ],
         "seatHeight": 0.389
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4771,
+          -0.4227
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4871,
+          -0.3927
+        ],
+        "deskHeight": 0.697
+      },
+      "type": {
+        "counterHeight": 0.954
       }
     },
     {
@@ -338,9 +650,33 @@
       "file": "club_kid_2.glb",
       "height": 1.783,
       "tris": 2890,
-      "bytes": 384084,
+      "bytes": 406564,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -352,16 +688,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -378,17 +742,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.03,
-        "run": 3.54
+        "run": 3.61
       },
       "sit": {
         "hip": [
@@ -397,6 +764,24 @@
           -0.3994
         ],
         "seatHeight": 0.396
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4854,
+          -0.4294
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4954,
+          -0.3994
+        ],
+        "deskHeight": 0.705
+      },
+      "type": {
+        "counterHeight": 0.971
       }
     },
     {
@@ -406,9 +791,33 @@
       "file": "club_kid_3.glb",
       "height": 1.696,
       "tris": 4218,
-      "bytes": 446360,
+      "bytes": 443520,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -420,16 +829,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -446,17 +883,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.96,
-        "run": 3.32
+        "run": 3.39
       },
       "sit": {
         "hip": [
@@ -465,6 +905,24 @@
           -0.3749
         ],
         "seatHeight": 0.372
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.455,
+          -0.4049
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.465,
+          -0.3749
+        ],
+        "deskHeight": 0.675
+      },
+      "type": {
+        "counterHeight": 0.909
       }
     },
     {
@@ -474,9 +932,33 @@
       "file": "receptionist.glb",
       "height": 1.735,
       "tris": 5074,
-      "bytes": 514680,
+      "bytes": 481932,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -488,16 +970,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -514,17 +1024,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.98,
-        "run": 3.36
+        "run": 3.43
       },
       "sit": {
         "hip": [
@@ -533,6 +1046,24 @@
           -0.3794
         ],
         "seatHeight": 0.376
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4606,
+          -0.4094
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4706,
+          -0.3794
+        ],
+        "deskHeight": 0.681
+      },
+      "type": {
+        "counterHeight": 0.92
       }
     },
     {
@@ -542,14 +1073,38 @@
       "file": "cop_lead.glb",
       "height": 1.837,
       "tris": 3232,
-      "bytes": 425252,
+      "bytes": 428428,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
           "duration": 3,
           "loop": true
         },
         "drive_sit": {
           "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
           "loop": true
         },
         "hands_up": {
@@ -560,16 +1115,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -586,17 +1169,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.06,
-        "run": 3.64
+        "run": 3.71
       },
       "sit": {
         "hip": [
@@ -605,6 +1191,24 @@
           -0.4106
         ],
         "seatHeight": 0.407
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4993,
+          -0.4406
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5093,
+          -0.4106
+        ],
+        "deskHeight": 0.719
+      },
+      "type": {
+        "counterHeight": 1.0
       },
       "drive_sit": {
         "hip": [
@@ -627,14 +1231,38 @@
       "file": "cop_partner.glb",
       "height": 1.729,
       "tris": 4224,
-      "bytes": 476172,
+      "bytes": 456632,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
           "duration": 3,
           "loop": true
         },
         "drive_sit": {
           "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
           "loop": true
         },
         "hands_up": {
@@ -645,16 +1273,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -671,17 +1327,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.99,
-        "run": 3.4
+        "run": 3.47
       },
       "sit": {
         "hip": [
@@ -690,6 +1349,24 @@
           -0.3838
         ],
         "seatHeight": 0.381
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4661,
+          -0.4138
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4761,
+          -0.3838
+        ],
+        "deskHeight": 0.686
+      },
+      "type": {
+        "counterHeight": 0.932
       },
       "drive_sit": {
         "hip": [
@@ -712,14 +1389,38 @@
       "file": "cop_radio.glb",
       "height": 1.799,
       "tris": 3232,
-      "bytes": 430532,
+      "bytes": 430508,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
           "duration": 3,
           "loop": true
         },
         "drive_sit": {
           "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
           "loop": true
         },
         "hands_up": {
@@ -730,16 +1431,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -756,17 +1485,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.03,
-        "run": 3.56
+        "run": 3.63
       },
       "sit": {
         "hip": [
@@ -775,6 +1507,24 @@
           -0.4017
         ],
         "seatHeight": 0.398
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4882,
+          -0.4317
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4982,
+          -0.4017
+        ],
+        "deskHeight": 0.708
+      },
+      "type": {
+        "counterHeight": 0.977
       },
       "drive_sit": {
         "hip": [
@@ -797,14 +1547,38 @@
       "file": "cop_wave.glb",
       "height": 1.78,
       "tris": 3972,
-      "bytes": 461320,
+      "bytes": 449344,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
           "duration": 3,
           "loop": true
         },
         "drive_sit": {
           "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
           "loop": true
         },
         "hands_up": {
@@ -815,16 +1589,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -841,17 +1643,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.02,
-        "run": 3.5
+        "run": 3.57
       },
       "sit": {
         "hip": [
@@ -860,6 +1665,24 @@
           -0.395
         ],
         "seatHeight": 0.392
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4799,
+          -0.425
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4899,
+          -0.395
+        ],
+        "deskHeight": 0.7
+      },
+      "type": {
+        "counterHeight": 0.96
       },
       "drive_sit": {
         "hip": [
@@ -882,9 +1705,33 @@
       "file": "abuela.glb",
       "height": 1.609,
       "tris": 4206,
-      "bytes": 440988,
+      "bytes": 440044,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -896,16 +1743,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -922,17 +1797,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.92,
-        "run": 3.16
+        "run": 3.23
       },
       "sit": {
         "hip": [
@@ -941,6 +1819,24 @@
           -0.3571
         ],
         "seatHeight": 0.354
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4329,
+          -0.3871
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4429,
+          -0.3571
+        ],
+        "deskHeight": 0.653
+      },
+      "type": {
+        "counterHeight": 0.864
       }
     },
     {
@@ -950,9 +1846,33 @@
       "file": "jail_guard.glb",
       "height": 1.817,
       "tris": 3136,
-      "bytes": 394352,
+      "bytes": 412764,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -964,16 +1884,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -990,17 +1938,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.04,
-        "run": 3.6
+        "run": 3.67
       },
       "sit": {
         "hip": [
@@ -1009,6 +1960,24 @@
           -0.4061
         ],
         "seatHeight": 0.403
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4938,
+          -0.4361
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5038,
+          -0.4061
+        ],
+        "deskHeight": 0.714
+      },
+      "type": {
+        "counterHeight": 0.988
       }
     },
     {
@@ -1018,9 +1987,33 @@
       "file": "inmate_mime.glb",
       "height": 1.764,
       "tris": 3354,
-      "bytes": 410956,
+      "bytes": 422224,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1032,16 +2025,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1058,17 +2079,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.0,
-        "run": 3.46
+        "run": 3.53
       },
       "sit": {
         "hip": [
@@ -1077,6 +2101,24 @@
           -0.3905
         ],
         "seatHeight": 0.387
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4744,
+          -0.4205
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4844,
+          -0.3905
+        ],
+        "deskHeight": 0.694
+      },
+      "type": {
+        "counterHeight": 0.949
       }
     },
     {
@@ -1086,9 +2128,33 @@
       "file": "inmate_tourist.glb",
       "height": 1.831,
       "tris": 3338,
-      "bytes": 406020,
+      "bytes": 421424,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1100,16 +2166,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1126,17 +2220,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.05,
-        "run": 3.62
+        "run": 3.69
       },
       "sit": {
         "hip": [
@@ -1145,6 +2242,24 @@
           -0.4084
         ],
         "seatHeight": 0.405
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4965,
+          -0.4384
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5065,
+          -0.4084
+        ],
+        "deskHeight": 0.717
+      },
+      "type": {
+        "counterHeight": 0.994
       }
     },
     {
@@ -1154,9 +2269,33 @@
       "file": "admirer_1.glb",
       "height": 1.747,
       "tris": 5582,
-      "bytes": 533912,
+      "bytes": 493092,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1168,16 +2307,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1194,17 +2361,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.98,
-        "run": 3.38
+        "run": 3.45
       },
       "sit": {
         "hip": [
@@ -1213,6 +2383,24 @@
           -0.3816
         ],
         "seatHeight": 0.378
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4633,
+          -0.4116
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4733,
+          -0.3816
+        ],
+        "deskHeight": 0.683
+      },
+      "type": {
+        "counterHeight": 0.926
       }
     },
     {
@@ -1222,9 +2410,33 @@
       "file": "admirer_2.glb",
       "height": 1.74,
       "tris": 3818,
-      "bytes": 428608,
+      "bytes": 432788,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1236,16 +2448,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1262,17 +2502,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.99,
-        "run": 3.42
+        "run": 3.49
       },
       "sit": {
         "hip": [
@@ -1281,6 +2524,24 @@
           -0.3861
         ],
         "seatHeight": 0.383
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4689,
+          -0.4161
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4789,
+          -0.3861
+        ],
+        "deskHeight": 0.689
+      },
+      "type": {
+        "counterHeight": 0.937
       }
     },
     {
@@ -1290,9 +2551,33 @@
       "file": "admirer_3.glb",
       "height": 1.676,
       "tris": 4762,
-      "bytes": 461768,
+      "bytes": 453188,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1304,16 +2589,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1330,17 +2643,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.95,
-        "run": 3.28
+        "run": 3.35
       },
       "sit": {
         "hip": [
@@ -1349,6 +2665,24 @@
           -0.3704
         ],
         "seatHeight": 0.367
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4495,
+          -0.4004
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4595,
+          -0.3704
+        ],
+        "deskHeight": 0.669
+      },
+      "type": {
+        "counterHeight": 0.898
       }
     },
     {
@@ -1358,9 +2692,33 @@
       "file": "admirer_4.glb",
       "height": 1.711,
       "tris": 5594,
-      "bytes": 509424,
+      "bytes": 480572,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1372,16 +2730,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1398,17 +2784,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.97,
-        "run": 3.34
+        "run": 3.41
       },
       "sit": {
         "hip": [
@@ -1417,6 +2806,24 @@
           -0.3771
         ],
         "seatHeight": 0.374
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4578,
+          -0.4071
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4678,
+          -0.3771
+        ],
+        "deskHeight": 0.678
+      },
+      "type": {
+        "counterHeight": 0.915
       }
     },
     {
@@ -1426,9 +2833,33 @@
       "file": "admirer_5.glb",
       "height": 1.659,
       "tris": 4142,
-      "bytes": 436244,
+      "bytes": 437184,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1440,16 +2871,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1466,17 +2925,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.95,
-        "run": 3.26
+        "run": 3.33
       },
       "sit": {
         "hip": [
@@ -1485,6 +2947,24 @@
           -0.3682
         ],
         "seatHeight": 0.365
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4467,
+          -0.3982
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4567,
+          -0.3682
+        ],
+        "deskHeight": 0.667
+      },
+      "type": {
+        "counterHeight": 0.892
       }
     },
     {
@@ -1494,9 +2974,33 @@
       "file": "admirer_6.glb",
       "height": 1.772,
       "tris": 5594,
-      "bytes": 506068,
+      "bytes": 478400,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1508,16 +3012,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1534,17 +3066,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.0,
-        "run": 3.46
+        "run": 3.53
       },
       "sit": {
         "hip": [
@@ -1553,6 +3088,24 @@
           -0.3905
         ],
         "seatHeight": 0.387
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4744,
+          -0.4205
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4844,
+          -0.3905
+        ],
+        "deskHeight": 0.694
+      },
+      "type": {
+        "counterHeight": 0.949
       }
     },
     {
@@ -1562,9 +3115,33 @@
       "file": "festival_goer_m1.glb",
       "height": 1.821,
       "tris": 3258,
-      "bytes": 400708,
+      "bytes": 416880,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1576,16 +3153,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1602,17 +3207,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.04,
-        "run": 3.6
+        "run": 3.67
       },
       "sit": {
         "hip": [
@@ -1621,6 +3229,24 @@
           -0.4061
         ],
         "seatHeight": 0.403
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4938,
+          -0.4361
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5038,
+          -0.4061
+        ],
+        "deskHeight": 0.714
+      },
+      "type": {
+        "counterHeight": 0.988
       }
     },
     {
@@ -1630,9 +3256,33 @@
       "file": "festival_goer_m2.glb",
       "height": 1.799,
       "tris": 3642,
-      "bytes": 425596,
+      "bytes": 429220,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1644,16 +3294,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1670,17 +3348,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.02,
-        "run": 3.5
+        "run": 3.57
       },
       "sit": {
         "hip": [
@@ -1689,6 +3370,24 @@
           -0.395
         ],
         "seatHeight": 0.392
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4799,
+          -0.425
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4899,
+          -0.395
+        ],
+        "deskHeight": 0.7
+      },
+      "type": {
+        "counterHeight": 0.96
       }
     },
     {
@@ -1698,9 +3397,33 @@
       "file": "festival_goer_m3.glb",
       "height": 1.871,
       "tris": 4498,
-      "bytes": 463596,
+      "bytes": 453976,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1712,16 +3435,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1738,17 +3489,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.07,
-        "run": 3.68
+        "run": 3.75
       },
       "sit": {
         "hip": [
@@ -1757,6 +3511,24 @@
           -0.4151
         ],
         "seatHeight": 0.411
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.5048,
+          -0.4451
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.5148,
+          -0.4151
+        ],
+        "deskHeight": 0.725
+      },
+      "type": {
+        "counterHeight": 1.011
       }
     },
     {
@@ -1766,9 +3538,33 @@
       "file": "festival_goer_f1.glb",
       "height": 1.691,
       "tris": 5594,
-      "bytes": 512200,
+      "bytes": 481748,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1780,16 +3576,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1806,17 +3630,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 0.96,
-        "run": 3.3
+        "run": 3.37
       },
       "sit": {
         "hip": [
@@ -1825,6 +3652,24 @@
           -0.3727
         ],
         "seatHeight": 0.369
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4522,
+          -0.4027
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4622,
+          -0.3727
+        ],
+        "deskHeight": 0.672
+      },
+      "type": {
+        "counterHeight": 0.904
       }
     },
     {
@@ -1834,9 +3679,33 @@
       "file": "fps_rival.glb",
       "height": 1.773,
       "tris": 2878,
-      "bytes": 381076,
+      "bytes": 405124,
       "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
         "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
           "duration": 3,
           "loop": true
         },
@@ -1848,16 +3717,44 @@
           "duration": 4,
           "loop": true
         },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
         "run": {
           "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
           "loop": true
         },
         "sit": {
           "duration": 4,
           "loop": true
         },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
         "talk": {
           "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
           "loop": true
         },
         "walk": {
@@ -1874,17 +3771,20 @@
         "deadpan",
         "what",
         "blink",
-        "talk"
+        "talk",
+        "nervous",
+        "smug"
       ],
       "morphMesh": "head",
       "sockets": {
         "handR": "socket_hand_R",
         "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
         "head": "socket_head"
       },
       "speeds": {
         "walk": 1.02,
-        "run": 3.52
+        "run": 3.59
       },
       "sit": {
         "hip": [
@@ -1893,6 +3793,1028 @@
           -0.3972
         ],
         "seatHeight": 0.394
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4827,
+          -0.4272
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4927,
+          -0.3972
+        ],
+        "deskHeight": 0.703
+      },
+      "type": {
+        "counterHeight": 0.966
+      }
+    },
+    {
+      "id": "barista",
+      "name": "Barista (Porto Cristo)",
+      "role": "block party: the espresso bar",
+      "file": "barista.glb",
+      "height": 1.679,
+      "tris": 3790,
+      "bytes": 429200,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.96,
+        "run": 3.37
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4622,
+          -0.3727
+        ],
+        "seatHeight": 0.369
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4522,
+          -0.4027
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4622,
+          -0.3727
+        ],
+        "deskHeight": 0.672
+      },
+      "type": {
+        "counterHeight": 0.904
+      }
+    },
+    {
+      "id": "dj",
+      "name": "The DJ",
+      "role": "block party + wine festival DJ",
+      "file": "dj.glb",
+      "height": 1.816,
+      "tris": 3042,
+      "bytes": 408736,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.04,
+        "run": 3.65
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.501,
+          -0.4039
+        ],
+        "seatHeight": 0.4
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.491,
+          -0.4339
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.501,
+          -0.4039
+        ],
+        "deskHeight": 0.711
+      },
+      "type": {
+        "counterHeight": 0.983
+      }
+    },
+    {
+      "id": "rideshare_driver",
+      "name": "Rideshare driver (London)",
+      "role": "Luton to Heathrow",
+      "file": "rideshare_driver.glb",
+      "height": 1.761,
+      "tris": 3178,
+      "bytes": 428164,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "drive_sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.01,
+        "run": 3.55
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4871,
+          -0.3927
+        ],
+        "seatHeight": 0.389
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4771,
+          -0.4227
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4871,
+          -0.3927
+        ],
+        "deskHeight": 0.697
+      },
+      "type": {
+        "counterHeight": 0.954
+      },
+      "drive_sit": {
+        "hip": [
+          0.0,
+          0.3492,
+          -0.35
+        ],
+        "wheelCenter": [
+          0.0,
+          0.6192,
+          0.15
+        ],
+        "wheelRadius": 0.17
+      }
+    },
+    {
+      "id": "airport_agent",
+      "name": "Airport agent",
+      "role": "Palma: check-in and gate",
+      "file": "airport_agent.glb",
+      "height": 1.815,
+      "tris": 3502,
+      "bytes": 423804,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.03,
+        "run": 3.63
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4982,
+          -0.4017
+        ],
+        "seatHeight": 0.398
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4882,
+          -0.4317
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4982,
+          -0.4017
+        ],
+        "deskHeight": 0.708
+      },
+      "type": {
+        "counterHeight": 0.977
+      }
+    },
+    {
+      "id": "flight_attendant",
+      "name": "Flight attendant (parody airline)",
+      "role": "the flight home",
+      "file": "flight_attendant.glb",
+      "height": 1.749,
+      "tris": 4334,
+      "bytes": 439896,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 0.99,
+        "run": 3.47
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4761,
+          -0.3838
+        ],
+        "seatHeight": 0.381
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4661,
+          -0.4138
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4761,
+          -0.3838
+        ],
+        "deskHeight": 0.686
+      },
+      "type": {
+        "counterHeight": 0.932
+      }
+    },
+    {
+      "id": "lounge_chef",
+      "name": "Lounge chef (noodle bar)",
+      "role": "Heathrow lounge: noodle bar",
+      "file": "lounge_chef.glb",
+      "height": 1.879,
+      "tris": 3398,
+      "bytes": 418564,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.0,
+        "run": 3.51
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "seatHeight": 0.385
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4716,
+          -0.4183
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "deskHeight": 0.692
+      },
+      "type": {
+        "counterHeight": 0.943
+      }
+    },
+    {
+      "id": "jail_sergeant",
+      "name": "Sargento (desk sergeant)",
+      "role": "jail: the desk sergeant",
+      "file": "jail_sergeant.glb",
+      "height": 1.741,
+      "tris": 3422,
+      "bytes": 420728,
+      "clips": {
+        "beckon": {
+          "duration": 1.6,
+          "loop": true
+        },
+        "cuffed": {
+          "duration": 3,
+          "loop": true
+        },
+        "dance": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_b": {
+          "duration": 2,
+          "loop": true
+        },
+        "dance_c": {
+          "duration": 2,
+          "loop": true
+        },
+        "drink": {
+          "duration": 3,
+          "loop": true
+        },
+        "facepalm": {
+          "duration": 3,
+          "loop": true
+        },
+        "hands_up": {
+          "duration": 2,
+          "loop": true
+        },
+        "idle": {
+          "duration": 4,
+          "loop": true
+        },
+        "phone_call": {
+          "duration": 4,
+          "loop": true
+        },
+        "point": {
+          "duration": 2,
+          "loop": true
+        },
+        "run": {
+          "duration": 0.667,
+          "loop": true
+        },
+        "selfie": {
+          "duration": 4,
+          "loop": true
+        },
+        "shrug": {
+          "duration": 2,
+          "loop": true
+        },
+        "sit": {
+          "duration": 4,
+          "loop": true
+        },
+        "sleep_seated": {
+          "duration": 4,
+          "loop": true
+        },
+        "talk": {
+          "duration": 4,
+          "loop": true
+        },
+        "type": {
+          "duration": 3,
+          "loop": true
+        },
+        "type_seated": {
+          "duration": 3,
+          "loop": true
+        },
+        "walk": {
+          "duration": 1,
+          "loop": true
+        },
+        "wave_off": {
+          "duration": 1.2,
+          "loop": true
+        }
+      },
+      "morphs": [
+        "smile",
+        "deadpan",
+        "what",
+        "blink",
+        "talk",
+        "nervous",
+        "smug"
+      ],
+      "morphMesh": "head",
+      "sockets": {
+        "handR": "socket_hand_R",
+        "handL": "socket_hand_L",
+        "phoneR": "socket_phone_R",
+        "head": "socket_head"
+      },
+      "speeds": {
+        "walk": 1.0,
+        "run": 3.51
+      },
+      "sit": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "seatHeight": 0.385
+      },
+      "sleep_seated": {
+        "hip": [
+          0.0,
+          0.4716,
+          -0.4183
+        ]
+      },
+      "type_seated": {
+        "hip": [
+          0.0,
+          0.4816,
+          -0.3883
+        ],
+        "deskHeight": 0.692
+      },
+      "type": {
+        "counterHeight": 0.943
       }
     }
   ]
