@@ -27,6 +27,30 @@ _Researched 2026-10-20 for Philadelphia, 19130. Covers a Bambu P2S/P1S purchase,
 - **For this project the P1S is functionally equivalent**: same 256³ build volume, PLA only, single color. A $339–399 P1S is the clear best value.
 - **If you want the P2S specifically, wait about a week.** Bambu announced Black Friday on Oct 23 last year and Oct 21 in 2024. But the P2S was left out of Black Friday 2025, so a P2S discount isn't guaranteed.
 
+#### Buy now or wait for Black Friday? (added 2026-10-20)
+
+**Status:** as of Oct 16, Bambu had not announced a 2026 sale. Past announcements came in late October: the 2025 sale ran Oct 28–Dec 5, and the 2024 sale started Oct 21. Black Friday itself is Nov 27.
+
+**How much the sale could save:**
+
+| Option | Price today | 2025 Black Friday | Likely 2026 Black Friday | Expected saving from waiting |
+|---|---|---|---|---|
+| P1S new | $399 | $399 | $349–399 | $0–50 |
+| P1S refurbished | $339 (stock uncertain) | — | about $339 | about $0. **Already beats any likely sale price.** |
+| P2S | $549 | **Not discounted** | $449–499 if included (a guess) | About a coin flip that it's included at all. Expected value about $25–50. |
+
+**What waiting costs:**
+- **Time:** only about 1–8 days to learn whether there's a sale, about 4 weeks at most to the sale itself.
+- **The printer isn't the bottleneck yet.** The Blender model, ideally from your own photos of the statue, has to exist before anything prints. That work fills the wait.
+- **Main risks:** the $339 refurbished P1S selling out, and a P2S sale never coming.
+
+**Decision rule:**
+1. If the refurbished P1S is in stock at $339, buy it now.
+2. Otherwise model in Blender while waiting for the announcement, which is expected by about Oct 28.
+3. Buy a P2S if it drops to $499 or less. If the P2S is left out again, buy a P1S at Black Friday pricing.
+
+**Sources:** [bambuhub.net Black Friday 2026 tracker](https://bambuhub.net/articles/bambu-black-friday-2026), [All3DP: 2025 sale](https://all3dp.com/4/reminder-bambu-labs-massive-black-friday-sale-starts-today/), [All3DP: Oct 28 start](https://all3dp.com/4/bambu-lab-kicks-off-huge-deals-on-oct-28-plus-h2c-giveaway/), [Tom's Hardware: P1S $399](https://www.tomshardware.com/3d-printing/only-usd399-for-the-bambu-lab-p1s-3d-printer-an-all-time-low-price-in-its-early-black-friday-sales-blowout).
+
 ### 2. Casting supplies: cost totals (full shopping list in Part B)
 
 | | One-time tools | Consumables | Total |
